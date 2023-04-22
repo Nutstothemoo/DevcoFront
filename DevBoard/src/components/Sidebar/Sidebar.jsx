@@ -51,7 +51,7 @@ function Sidebar({ isOpen, setIsLoading }) {
       transition="ease-in-out .2s"
       transform={isOpen ? 'translateX(0)' : '-translateX(100%)'}
       bgColor="bgPrimary"
-      style={{ 'backdrop-filter': 'blur(15px)' }}
+      style={{ 'backdropFilter': 'blur(15px)' }}
       zIndex={1}
       borderRadius="lg"
       w={['100%']}

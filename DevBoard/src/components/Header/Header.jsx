@@ -52,7 +52,7 @@ function Header({setIsLoading}) {
       p="4" // Sets the padding of the header
       pr="10" // Sets the right padding of the header
       pl="10" // Sets the left padding of the header
-      bgColor="bgPrimary" style={{'backdrop-filter': 'blur(15px)'}} // Sets the background color of the header
+      bgColor="bgPrimary" style={{'backdropFilter': 'blur(15px)'}} // Sets the background color of the header
       alignItems="center" // Sets the vertical alignment of the header's children
       justifyContent="space-between" // Sets the horizontal alignment of the header's children
       boxShadow="lg"
