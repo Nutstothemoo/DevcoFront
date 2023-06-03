@@ -1,15 +1,12 @@
-import {Box, Button, Flex, Heading, Image, Text, useMediaQuery} from '@chakra-ui/react';
-import { Link } from 'react-router-dom';
+import {Box, Button, Flex, Text, useMediaQuery} from '@chakra-ui/react';
 import Lottie from 'lottie-react';
 import homepage from '../../assets/homepage.json';
-import blob from '../../assets/blobanimationBG.svg';
-import blob2 from '../../assets/blobanimation.svg';
 import login from '../../assets/security6.json';
 import Register from '../Register/Register';
 import Login from '../Login/Login';
 import { motion } from "framer-motion"
 import {useEffect, useState} from 'react';
-import log from "eslint-plugin-react/lib/util/log.js";
+
 
 
 function Homepage() {
@@ -82,7 +79,7 @@ function Homepage() {
                 bgGradient='linear(to-l, #59a3ff, #9ae9ff)'
                 bgClip='text'
                 mb="5">
-              Devboard
+              Dev Co
             </Text>
 
             <Text fontSize="lg"
@@ -92,7 +89,7 @@ function Homepage() {
                   our dashboard, designed specifically for developers. Collaborate with team members,
                   and access key metrics and analytics
                   all in one place.
-                  Take your development to the next level with DevBoard today!
+                  Take your development to the next level with Dev Co today!
             </Text>
             <Box w="100%" display="flex" justifyContent="center" gap={2}>
                 <Button onClick={showRegister}
