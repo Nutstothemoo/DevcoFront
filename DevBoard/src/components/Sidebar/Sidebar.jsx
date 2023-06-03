@@ -47,7 +47,7 @@ function Sidebar({ isOpen, setIsLoading }) {
     <Box
       h="100vh"
       boxShadow="base"
-      overflowY="auto"
+      overflowY="hidden"
       transition="ease-in-out .2s"
       transform={isOpen ? 'translateX(0)' : '-translateX(100%)'}
       bgColor="bgPrimary"

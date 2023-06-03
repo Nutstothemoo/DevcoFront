@@ -32,40 +32,19 @@ import Kanban from '../Kanban/Kanban';
 import blob2 from '../../assets/blobanimation.svg';
 import blob from '../../assets/blobanimationBG.svg';
 import Notfound from '../Notfound/Notfound';
-// App component
+
 export default function App() {
+
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const location = useLocation();
 
-  // Check if user is logged in
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
       setIsLoggedIn(true);
     }
-    // if (
-    //   !token && 
-    //   location.pathname == '/repositories' ||
-    //   location.pathname == '/feed'  ||
-    //   location.pathname == '/profile' ||
-    //   location.pathname == '/mypost' ||
-    //   location.pathname == '/post' ||
-    //   location.pathname == '/stackoverflow' ||
-    //   location.pathname == '/editpost/:postId' ||
-    //   location.pathname == '/kanban' ||
-    //   location.pathname == '/playground' ||
-    //   location.pathname == '/likes' ||
-    //   location.pathname == '/addpost' ||
-    //   location.pathname == '/' ||
-    //   location.pathname == '/npm'      
-    // ) {
-    //   window.location.replace('/homepage');
-    // }
   }, []);
-  // Redirect user to register page if not logged in and not on login or homepage routes
-
-  // Hide Sidebar and Header components for /register and /login routes
   const isRegisterOrLoginRouteOrHome =
     location.pathname === '/register' ||
     location.pathname === '/homepage' ||
@@ -82,12 +61,12 @@ export default function App() {
         <Sidebar setIsLoading={setIsLoading} />
       </Box>
     );
-  const header = isRegisterOrLoginRouteOrHome ? null : (
+
+    const header = isRegisterOrLoginRouteOrHome ? null : (
     <Header setIsLoading={setIsLoading} />
   );
 
   return (
-    // Flex container for Sidebar and main content area
     <Flex
       minH="100vh"
       bgGradient="linear(to-r, #2e76ff, #172c69)"
@@ -95,8 +74,7 @@ export default function App() {
       zIndex="-500"
     >
       {sidebar}
-      {/* Box for main content area */}
-      <Box
+        <Box
         minH="100vh"
         w={isRegisterOrLoginRouteOrHome || isSmallerThan1000 ? '100vw' : '100%'}
         p={isHomepage || isSmallerThan1000 ? '' : '5'}
@@ -114,7 +92,7 @@ export default function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
             <Route path="/repositories" element={<Repositories />} />
-            <Route path="/feed" element={<Feed />} />
+            {/* <Route path="/feed" element={<Feed />} /> */}
             <Route path="/posts" element={<Posts />} />
             <Route path="/mypost" element={<MyPosts />} />
             <Route path="/profile" element={<Profile />} />

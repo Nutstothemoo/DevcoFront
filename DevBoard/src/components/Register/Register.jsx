@@ -33,8 +33,6 @@ import Notification from "../Notification/Notification.jsx";
 function Register({setShowDiv, setShowLogin, onRegisterSuccess}) {
   const [isLoading, setIsLoading] = useState(false);
   const [notification, setNotification] = useState(false);
-
-
   const [showPassword, setShowPassword] = useState(false);
   const [isEmailValid, setEmailValid] = useState(true);
   const [isPasswordValid, setPasswordValid] = useState(true);
