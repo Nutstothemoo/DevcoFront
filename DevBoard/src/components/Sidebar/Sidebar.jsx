@@ -56,9 +56,13 @@ function Sidebar({ isOpen, setIsLoading }) {
       borderRadius="lg"
       w={['100%']}
     >
-      <Flex p="4" alignItems="center" justify="center">
+      <Flex p="4" alignItems="center" justify="center" gap={"4"}>
+
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="48" height="48">
+        <path d="M32 4L4 20v24l28 16 28-16V20L32 4zm0 2.828L55.172 20 32 35.172 8.828 20 32 6.828zM6 22.5v19L32 59l26-17.5v-19L32 39.5 6 22.5z" fill="#ffffff"/>
+      </svg> 
         <Text fontSize="30px" fontWeight="700" mt="5" color="primary">
-          DevBoard
+          DevGO
         </Text>
       </Flex>
       <Box

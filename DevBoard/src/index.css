@@ -39,13 +39,13 @@ h1 {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
+    color: #05223b;
     background-color: #ffffff;
   }
   a:hover {
-    color: #747bff;
+    color: #1d26c6;
   }
   button {
-    background-color: #f9f9f9;
+    background-color: #f9f9f9ed;
   }
 }
