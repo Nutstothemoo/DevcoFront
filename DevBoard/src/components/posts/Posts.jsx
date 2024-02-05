@@ -44,7 +44,12 @@ const Posts = () => {
                           like={post.like}
                           isLiked={liked_posts && liked_posts.some((likedPost) => likedPost.id === post.id)} />
                 ))) : (
-                <Loader />
+            <Box w="100%">
+                <Text
+                    textAlign="center"
+                    fontWeight="600"
+                    color="primary">Oupss there is no post here...</Text>
+                </Box>
             )}
 
             </Box>

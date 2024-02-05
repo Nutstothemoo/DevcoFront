@@ -210,7 +210,7 @@ function Sidebar({ isOpen, setIsLoading }) {
                   </Box>
                 </Link>
               
-                <Link
+                {/* <Link
                   to="/feed"
                   style={{ width: '100%', height: '50px', marginBottom: '5px' }}
                 >
@@ -237,7 +237,7 @@ function Sidebar({ isOpen, setIsLoading }) {
                       </Text>
                     </Flex>
                   </Box>
-                </Link>
+                </Link> */}
               </Box>
             )}
           </SlideFade>

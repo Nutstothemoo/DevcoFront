@@ -49,48 +49,8 @@ function Register({setShowDiv, setShowLogin, onRegisterSuccess}) {
   );
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const passwordRegex = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}$/;
-
-  //   evt.preventDefault();
-
-  //   switch (true) {
-  //     case username.trim() === '':
-  //       setUsernameValid(false);
-  //       return;
-  //     case !emailRegex.test(email):
-  //       setUsernameValid(true);
-  //       setEmailValid(false);
-  //       return;
-  //     case !passwordRegex.test(password):
-  //       setEmailValid(true);
-  //       setPasswordValid(false);
-  //       return;
-  //     case password !== confirmPassword:
-  //       setPasswordValid(true);
-  //       setPasswordConfirmed(false);
-  //       return;
-  //     default:
-  //       setUsernameValid(true);
-  //       setEmailValid(true);
-  //       setPasswordValid(true);
-  //       setPasswordConfirmed(true);
-  //       setIsLoading(true);
-  //       dispatch(registerUser({
-  //         username, email, password, passwordConfirm: confirmPassword,
-  //       }));
-  //       setTimeout(() => {
-  //         // Définir une fonction qui sera appelée après un délai de 500 millisecondes
-  //         setIsLoading(false); // Mettre isLoading à faux
-  //         // setNotification(true); 
-  //         // onRegisterSuccess(true);
-  //         setTimeout(() => {
-  //           // Définir une fonction qui sera appelée après un délai de 3000 millisecondes
-  //           setNotification(false); // Mettre notification à faux
-  //         }, 300);
-  //       }, 500);}
-  // };
   const handleSubmit = async (evt) => {
     evt.preventDefault();
-  
     switch (true) {
       case username.trim() === '':
         setUsernameValid(false);
@@ -114,31 +74,37 @@ function Register({setShowDiv, setShowLogin, onRegisterSuccess}) {
         setPasswordConfirmed(true);
         setIsLoading(true);
         try {
-          const status = await dispatch(registerUser({
+          const response = await dispatch(registerUser({
             username, email, password, passwordConfirm: confirmPassword,
           }));
-          setIsLoading(false);
-          if (status === 200) { 
+
+          if (response?.payload?.status === 201) {
             setNotificationMessage('Your account has been registered successfully');
             setNotificationStatus('info');
             setNotification(true);
             onRegisterSuccess(true);
-          }
-          else {
-            setNotificationMessage('An error occurred while registering your account');
+            setIsLoading(false);
+          } else {
+            setNotificationMessage('Usarname or email incorrect');
             setNotificationStatus('error');
             setNotification(true);
-            onRegisterSuccess(true);
+            setIsSubmitted(false)
+            setIsLoading(false);
+            setTimeout(() => {
+              setNotification(false);
+            }, 1000);
           }
           } catch (error) {
           setIsLoading(false);
-          setNotificationMessage('An error occurred while registering your account');
+          setNotificationMessage('Serveur Error');
           setNotificationStatus('error');
           setNotification(true);
+          setTimeout(() => {
+            setNotification(false);
+          }, 1000);
         }
     }
   };
-
   const handleInputChange = (dispatch, actionCreator) => (evt) => {
     dispatch(actionCreator(evt.target.value));
   };

@@ -110,7 +110,7 @@ function Header({setIsLoading}) {
             <Text>Sign In</Text>
           </Link>
         )}
-        <IconButton aria-label="Settings" bgColor="secondary" color="#2B3447" icon={<IoMdSettings />} />
+        {/* <IconButton aria-label="Settings" bgColor="secondary" color="#2B3447" icon={<IoMdSettings />} /> */}
       </Box>
     </Flex>
   );

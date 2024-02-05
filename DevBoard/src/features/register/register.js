@@ -13,7 +13,7 @@ export const registerUser = createAsyncThunk(
       password,
       passwordConfirm,
     });
-    return response.status;
+    return response;
   }
 );
 

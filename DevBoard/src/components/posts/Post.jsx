@@ -51,7 +51,6 @@ function Post({postId, title, content, like, date, imageuser, username, isLiked,
                 <Heading size='lg'>{title}</Heading>
             </CardHeader>
             <CardBody pt="0">
-                {/* <Stack divider={<StackDivider />} spacing='4'> */}
                 <Box>
                 <Text pt='2' fontSize='sm'>
                     <div> <ReactMarkdown children={content} className="react-markdown-test" remarkPlugins={[remarkGfm]} />
